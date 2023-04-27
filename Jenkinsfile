@@ -12,6 +12,6 @@ pipeline {
 
   }
   environment {
-    registry = 'ucha0792/testlab'
+    cicd-pipeline = 'ucha0792/Jenkinsfile'
   }
 }
