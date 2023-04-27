@@ -18,8 +18,8 @@ pipeline {
     stage('Application Build') {
       steps {
         script {
-          docker.image("${registry}:${env.BUILD_ID}").inside {c ->
-          sh 'build.sh'}
+          
+          sh 'build.sh'
         }
       
       }
