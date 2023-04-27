@@ -1,5 +1,6 @@
 pipeline {
   agent any
+  tools {nodejs "nodejs"}
   stages {
     stage('Git Checkout') {
       steps {
@@ -13,7 +14,7 @@ pipeline {
 
       }
     }
-
+    
     stage('Application Build') {
       steps {
           sh 'nmp install'
