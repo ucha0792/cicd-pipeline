@@ -16,10 +16,7 @@ pipeline {
 
     stage('Application Build') {
       steps {
-        script {
           sh 'nmp install'
-        }
-
       }
     }
 
