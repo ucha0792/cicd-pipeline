@@ -17,7 +17,11 @@ pipeline {
     
     stage('Application Build') {
       steps {
-          sh 'nmp install'
+        script {
+          docker.image("${registry}:${env.BUILD_ID}").inside {c ->
+          sh 'build.sh'}
+        }
+      
       }
     }
 
