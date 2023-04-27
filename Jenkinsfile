@@ -5,7 +5,7 @@ pipeline {
       steps {
         script {
           git credentialsId: 'github-id',
-          url: 'https://github.com/ucha0792/cicd-pipeline/scripts/test.sh',
+          url: 'https://github.com/ucha0792/cicd-pipeline',
           branch: "master",
           changelog: true,
           poll: true
