@@ -24,6 +24,16 @@ pipeline {
       }
     }
 
+    stage('Tests') {
+      steps {
+        script {
+          docker.image("${registry}:${env.BUILD_ID}").inside {c ->
+          sh 'python app_test.py'}
+        }
+
+      }
+    }
+
   }
   environment {
     registry = 'ucha0792/gitlab'
