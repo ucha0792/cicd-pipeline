@@ -32,6 +32,7 @@ pipeline {
 
       }
     }
+
     stage('Docker Image Build') {
       steps {
         script {
@@ -41,15 +42,18 @@ pipeline {
 
       }
     }
-    stage('Docker Image Push'){
+
+    stage('Docker Image Push') {
       steps {
         script {
           docker.withRegistry('', 'dockerhub-id') {
             docker.image("${registry}:${env.BUILD_ID}").push('latest')
           }
-        }       
+        }
+
       }
-    } 
+    }
+
   }
   environment {
     registry = 'ucha0792/gitlab'
