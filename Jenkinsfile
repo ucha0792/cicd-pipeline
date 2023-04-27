@@ -12,6 +12,6 @@ pipeline {
 
   }
   environment {
-    cicd-pipeline = 'ucha0792/Jenkinsfile'
+    cicd-pipeline-Fork = 'ucha0792/Jenkinsfile'
   }
 }
