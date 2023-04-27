@@ -12,6 +12,6 @@ pipeline {
 
   }
   environment {
-    cicd-pipeline-Fork = 'ucha0792/Jenkinsfile'
+    registry = 'ucha0792/gitlab'
   }
 }
