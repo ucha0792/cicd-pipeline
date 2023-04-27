@@ -4,7 +4,11 @@ pipeline {
     stage('Git Checkout') {
       steps {
         script {
-          git credentialsId: 'github', url: 'https://github.com/ucha0792/cicd-pipeline/scripts/test.sh'
+          git credentialsId: 'github-id', 
+            url: 'https://github.com/ucha0792/cicd-pipeline/scripts/test.sh',
+            branch: "master",
+            changelog: true,
+            poll: true
         }
 
       }
