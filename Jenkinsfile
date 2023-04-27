@@ -17,8 +17,7 @@ pipeline {
     stage('Application Build') {
       steps {
         script {
-          checkout scm
-          def customImage = docker.build("${registry}:${env.BUILD_ID}")
+          sh 'nmp install'
         }
 
       }
@@ -33,7 +32,24 @@ pipeline {
 
       }
     }
+    stage('Docker Image Build') {
+      steps {
+        script {
+          checkout scm
+          def customImage = docker.build("${registry}:${env.BUILD_ID}")
+        }
 
+      }
+    }
+    stage('Docker Image Push'){
+      steps {
+        script {
+          docker.withRegistry('', 'dockerhub-id') {
+            docker.image("${registry}:${env.BUILD_ID}").push('latest')
+          }
+        }       
+      }
+    } 
   }
   environment {
     registry = 'ucha0792/gitlab'
