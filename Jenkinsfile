@@ -16,12 +16,8 @@ pipeline {
     }
     
     stage('Application Build') {
-      steps {
-        script {
-          
-          sh 'build.sh'
-        }
-      
+      steps { 
+          sh './scripts/build.sh'
       }
     }
 
