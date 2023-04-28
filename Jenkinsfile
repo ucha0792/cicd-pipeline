@@ -19,7 +19,7 @@ pipeline {
         script {
           checkout scm
           def customImage = docker.build("${registry}:${env.BUILD_ID}")
-          sh 'javascript ./src/App.js'
+          sh 'javascript /src/App.js'
         }
 
       }
