@@ -14,10 +14,14 @@ pipeline {
       }
     }
 
-    stage('Application Build') {
+     stage('aplication Build') {
       steps {
-        sh "chmod +x -R ${env.WORKSPACE}"
-        sh 'javascript ./src/App.js'
+        script {
+          checkout scm
+          def customImage = docker.build("${registry}:${env.BUILD_ID}")
+          sh 'javascript ./src/App.js'
+        }
+
       }
     }
 
