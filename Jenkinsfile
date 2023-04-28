@@ -16,8 +16,8 @@ pipeline {
 
     stage('Application Build') {
       steps {
-        sh "chmod +x -R ${env.WORKSPACE}"
-        sh './scripts/build.sh'
+        
+        sh 'sudo ./scripts/build.sh'
       }
     }
 
