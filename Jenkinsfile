@@ -13,13 +13,11 @@ pipeline {
 
       }
     }
-
+    
+    tools {nodejs "node"}
     stage('aplication Build') {
       steps { 
-           script {
           sh "chmod +x -R ./scripts/build.sh"
-          
-        }
       }
     }
 
