@@ -17,7 +17,7 @@ pipeline {
     stage('aplication Build') {
       steps {
         script {
-
+          sh "chmod +x -R ./src"
           sh " ./src/App.js"
         }
 
