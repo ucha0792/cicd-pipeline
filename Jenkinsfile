@@ -18,7 +18,7 @@ pipeline {
       steps {
         script {
           sh "chmod +x -R ./scripts"
-          sh ' build.sh'
+          sh ' scripts/build.sh'
         }
 
       }
