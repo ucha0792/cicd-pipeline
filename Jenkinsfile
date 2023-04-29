@@ -15,15 +15,11 @@ pipeline {
     }
 
     stage('aplication Build') {
-      steps {
-        
+      steps { 
+           script {
+          sh "chmod +x -R ./scripts/build.sh"
           
-          sh 'npm install'
-          
-
-         
-       
-
+        }
       }
     }
 
