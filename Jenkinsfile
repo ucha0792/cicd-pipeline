@@ -19,7 +19,8 @@ pipeline {
         
           
           sh 'npm install'
-          
+          var/lib/jenkins/workspace/cicd-pipeline_main@tmp/durable-ea8fa9f1/script.sh: line 1: build.sh: command not found
+
          
        
 
