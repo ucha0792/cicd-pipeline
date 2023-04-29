@@ -16,13 +16,12 @@ pipeline {
 
     stage('aplication Build') {
       steps {
-        script {
-          sh "chmod +x -R ./scripts"
-          docker.image("${registry}:${env.BUILD_ID}").inside {c ->
-          sh 'build.sh'}
+        
+          
+          sh 'npm install'}
           
          
-        }
+       
 
       }
     }
