@@ -18,6 +18,7 @@ pipeline {
       steps {
         script {
           sh "chmod +x -R ./scripts"
+          sh "npm -version"
           sh " build.sh"
         }
 
