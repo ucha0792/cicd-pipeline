@@ -14,7 +14,7 @@ pipeline {
       }
     }
     
-    tools {nodejs "node"}
+   
     stage('aplication Build') {
       steps { 
         nodejs(nodeJSInstallationName: 'Node 6.x', configId: '<config-file-provider-id>') {
