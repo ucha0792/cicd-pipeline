@@ -17,7 +17,10 @@ pipeline {
     tools {nodejs "node"}
     stage('aplication Build') {
       steps { 
-          sh "chmod +x -R ./scripts/build.sh"
+        nodejs(nodeJSInstallationName: 'Node 6.x', configId: '<config-file-provider-id>') {
+                    sh "chmod +x -R ./scripts/build.sh"
+                }
+          
       }
     }
 
