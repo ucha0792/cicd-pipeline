@@ -24,7 +24,7 @@ pipeline {
       steps {
       
           
-          sh '/scripts/test.sh'
+          sh 'chmod +x -R ./scripts/test.sh'
    
 
       }
