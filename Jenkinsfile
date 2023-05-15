@@ -22,11 +22,7 @@ pipeline {
 
     stage('Tests') {
       steps {
-      
-          
-          sh '/scripts/test.sh'
-   
-
+        sh '/scripts/test.sh'
       }
     }
 
@@ -53,6 +49,6 @@ pipeline {
 
   }
   environment {
-    registry = 'ucha0792/gitlab'
+    registry = 'ucha0792/testlab'
   }
 }
