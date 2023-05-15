@@ -22,10 +22,10 @@ pipeline {
 
     stage('Tests') {
       steps {
-        script {
+      
           
           sh '/scripts/test.sh'}
-        }
+   
 
       }
     }
