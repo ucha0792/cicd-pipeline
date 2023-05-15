@@ -14,8 +14,6 @@ pipeline {
       }
     }
 
-   
-
   }
   environment {
     registry = 'ucha0792/gitlab'
