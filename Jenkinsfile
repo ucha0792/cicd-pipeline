@@ -7,7 +7,8 @@ pipeline {
           git credentialsId: 'github-id',
           url: 'https://github.com/ucha0792/cicd-pipeline',
           branch: 'main',
-       
+          changelog: true,
+          poll: true
         }
 
       }
