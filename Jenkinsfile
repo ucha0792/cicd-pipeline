@@ -13,14 +13,13 @@ pipeline {
 
       }
     }
-    
-   
+
     stage('aplication Build') {
-      steps { 
+      steps {
         nodejs(nodeJSInstallationName: 'Node 6.x', configId: '<config-file-provider-id>') {
-                    sh "chmod +x -R ./scripts/build.sh"
-                }
-          
+          sh 'chmod +x -R ./scripts/build.sh'
+        }
+
       }
     }
 
