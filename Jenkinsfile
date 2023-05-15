@@ -14,45 +14,7 @@ pipeline {
       }
     }
 
-    stage('aplication Build') {
-      steps {
-        nodejs(nodeJSInstallationName: 'Node 6.x', configId: '<config-file-provider-id>') {
-          sh 'chmod +x -R ./scripts/build.sh'
-        }
-
-      }
-    }
-
-    stage('Tests') {
-      steps {
-        script {
-          docker.image("${registry}:${env.BUILD_ID}").inside {c ->
-          sh 'test.sh'}
-        }
-
-      }
-    }
-
-    stage('Docker Image Build') {
-      steps {
-        script {
-          checkout scm
-          def customImage = docker.build("${registry}:${env.BUILD_ID}")
-        }
-
-      }
-    }
-
-    stage('Docker Image Push') {
-      steps {
-        script {
-          docker.withRegistry('', 'dockerhub-id') {
-            docker.image("${registry}:${env.BUILD_ID}").push('latest')
-          }
-        }
-
-      }
-    }
+   
 
   }
   environment {
